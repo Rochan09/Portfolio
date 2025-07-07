@@ -125,7 +125,7 @@ export const certifications: Certification[] = [
 
 export const contactInfo: ContactInfo = {
   email: 'rochanvardhan2004@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/rochan-vardhan-boddepalli-8566a0289',
+  linkedin: 'https://www.linkedin.com/in/rochan-vardhan-boddepalli',
   github: 'https://github.com/Rochan09',
   phone: '+91 xxxxxxxxxx',
   location: 'Srikakulam,Andhra Pradesh,India'

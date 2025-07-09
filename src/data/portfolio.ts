@@ -39,7 +39,7 @@ export const projects: Project[] = [
     title: 'React Notes App',
     description: 'Full-stack notes application with JWT authentication and CRUD functionality.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
-    imageUrl: 'https://images.pexels.com/photos/1181373/pexels-photo-1181373.jpeg?auto=compress&cs=tinysrgb&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
     githubUrl: 'https://github.com/Rochan09'
   },
   {
@@ -47,8 +47,16 @@ export const projects: Project[] = [
     title: 'Job Portal Web Application',
     description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
-    imageUrl: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
     githubUrl: 'https://github.com/Rochan09'
+  },
+  {
+    id: '3',
+    title: 'My portfolio',
+    description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
+    githubUrl: 'https://github.com/Rochan09/React-Portfolio'
   }
 ];
 

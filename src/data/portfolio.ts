@@ -56,7 +56,7 @@ export const projects: Project[] = [
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09/React-Portfolio'
+    githubUrl: 'https://github.com/Rochan09'
   }
 ];
 

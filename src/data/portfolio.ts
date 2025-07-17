@@ -35,7 +35,7 @@ export const experiences: Experience[] = [
     id: '3',
     title: 'Intern',
     company: 'Lomaa IT Solutions',
-    period: '14th July 2025 – Present',
+    period: 'July 2025 – Present',
     description: [
       'Participating in comprehensive training across frontend and backend development, with subsequent integration into real-time projects upon completion.',
       'Engage in weekly meetings with industry professionals to gain practical insights and enhance professional development.'

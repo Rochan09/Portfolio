@@ -10,17 +10,6 @@ export const personalInfo = {
 
 export const experiences: Experience[] = [
   {
-    id: '1',
-    title: 'Web Development Intern',
-    company: 'Averixis Solutions',
-    period: 'June 2025 – Present',
-    description: [
-      'Working on real-time projects using Google Cloud technologies',
-      'Gaining full-stack experience with front-end and back-end logic'
-    ],
-    certificateUrl: '/certificates/averixis-certificate.pdf'
-  },
-  {
     id: '2',
     title: 'Software Trainee Intern',
     company: 'Krify Software Technologies',
@@ -30,6 +19,28 @@ export const experiences: Experience[] = [
       'Worked on live secure web development projects'
     ],
     certificateUrl: '/certificates/krify-certificate.pdf'
+  },
+  {
+    id: '1',
+    title: 'Web Development Intern',
+    company: 'Averixis Solutions',
+    period: 'June 2025 – August 2025',
+    description: [
+      'Completed internship working on real-time projects using Google Cloud technologies',
+      'Gained full-stack experience with front-end and back-end logic'
+    ],
+    certificateUrl: '/certificates/averixis-certificate.pdf'
+  },
+  {
+    id: '3',
+    title: 'Intern',
+    company: 'Lomaa IT Solutions',
+    period: '14th July 2025 – Present',
+    description: [
+      'Participating in comprehensive training across frontend and backend development, with subsequent integration into real-time projects upon completion.',
+      'Engage in weekly meetings with industry professionals to gain practical insights and enhance professional development.'
+    ],
+    certificateUrl: '/certificates/Looma.pdf'
   }
 ];
 

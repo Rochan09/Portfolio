@@ -51,7 +51,8 @@ export const projects: Project[] = [
     description: 'Full-stack notes application with JWT authentication and CRUD functionality.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
     imageUrl: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09'
+    githubUrl: 'https://github.com/Rochan09',
+    liveUrl: 'https://notes-app-woad-nine.vercel.app'
   },
   {
     id: '2',
@@ -59,7 +60,8 @@ export const projects: Project[] = [
     description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
     imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09'
+    githubUrl: 'https://github.com/Rochan09',
+    liveUrl: 'https://job-portal-demo.example.com'
   },
   {
     id: '3',
@@ -67,7 +69,8 @@ export const projects: Project[] = [
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09'
+    githubUrl: 'https://github.com/Rochan09',
+    liveUrl: 'https://rochanportfolio.vercel.app'
   }
 ];
 

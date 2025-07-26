@@ -5,7 +5,6 @@ import Skills from './components/sections/Skills';
 import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
 import Achievements from './components/sections/Achievements';
-import Resume from './components/sections/Resume';
 import Contact from './components/sections/Contact';
 import BackToTop from './components/ui/BackToTop';
 import WaveDivider from './components/ui/WaveDivider';
@@ -54,8 +53,6 @@ function App() {
         return <Projects />;
       case 'achievements':
         return <Achievements />;
-      case 'resume':
-        return <Resume />;
       case 'contact':
         return <Contact />;
       default:

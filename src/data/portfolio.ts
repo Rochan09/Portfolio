@@ -60,7 +60,7 @@ export const projects: Project[] = [
     description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
     imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09',
+    githubUrl: 'https://github.com/Rochan09/Job-Portal-App',
     liveUrl: 'https://job-portal-demo.example.com'
   },
   {

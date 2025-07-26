@@ -26,11 +26,14 @@ const About: React.FC = () => {
         {/* Left: Text Content */}
         <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-black">
-            Hi, I am <span>Rochan Vardhan Boddepalli</span>
+            I am <span>Rochan Vardhan Boddepalli</span>
           </h1>
-          <p className="text-2xl sm:text-3xl text-gray-700 italic mb-10 font-light leading-relaxed max-w-xl">
+          <p className="text-2xl sm:text-3xl text-gray-700 italic mb-6 font-light leading-relaxed max-w-xl">
             "Turning ideas into reality, one line of code at a time."
           </p>
+          <h2 className="text-xl sm:text-2xl text-blue-700 font-semibold mb-10">
+            Web Developer
+          </h2>
           <div className="flex flex-col sm:flex-row gap-6 items-center mb-6">
             <a
               href="/resume.pdf"

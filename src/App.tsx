@@ -8,55 +8,56 @@ import Achievements from './components/sections/Achievements';
 import Contact from './components/sections/Contact';
 import BackToTop from './components/ui/BackToTop';
 import WaveDivider from './components/ui/WaveDivider';
-import NotFound from './components/sections/NotFound';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || 'about';
-      setActiveSection(hash);
+    const handleScroll = () => {
+      const sections = ['about', 'skills', 'experience', 'projects', 'achievements', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset for header
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            // Update URL hash without triggering scroll
+            if (window.location.hash !== `#${section}`) {
+              window.history.replaceState(null, '', `#${section}`);
+            }
+            break;
+          }
+        }
+      }
     };
 
     // Set initial section from URL hash
-    handleHashChange();
-
-    // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
+    const hash = window.location.hash.slice(1) || 'about';
+    setActiveSection(hash);
     
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
+    // Scroll to section if hash exists, accounting for fixed header
+    const element = document.getElementById(hash);
+    if (element) {
+      const headerHeight = 96; // Approximate height of fixed header (py-6 = 24px * 2 = 48px + content)
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
-    window.location.hash = section;
-    
-    // Smooth scroll to section
     const element = document.getElementById(section);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const renderActiveSection = () => {
-    switch (activeSection) {
-      case 'about':
-        return <About />;
-      case 'skills':
-        return <Skills />;
-      case 'experience':
-        return <Experience />;
-      case 'projects':
-        return <Projects />;
-      case 'achievements':
-        return <Achievements />;
-      case 'contact':
-        return <Contact />;
-      default:
-        return <NotFound />;
+      const headerHeight = 96; // Approximate height of fixed header
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
     }
   };
 
@@ -67,9 +68,14 @@ function App() {
         onSectionChange={handleSectionChange} 
       />
       
-      <main className="relative">
+      <main className="relative pt-24">
         <WaveDivider />
-        {renderActiveSection()}
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Achievements />
+        <Contact />
       </main>
       
       <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 text-white py-8 px-4 text-center">

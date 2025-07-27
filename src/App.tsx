@@ -8,9 +8,11 @@ import Achievements from './components/sections/Achievements';
 import Contact from './components/sections/Contact';
 import BackToTop from './components/ui/BackToTop';
 import WaveDivider from './components/ui/WaveDivider';
+import Navigation from './components/Navigation';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +61,7 @@ function App() {
       const elementPosition = element.offsetTop - headerHeight;
       window.scrollTo({ top: elementPosition, behavior: 'smooth' });
     }
+    setIsMenuOpen(false); // Close menu on navigation
   };
 
   return (
@@ -66,8 +69,10 @@ function App() {
       <Header 
         activeSection={activeSection} 
         onSectionChange={handleSectionChange} 
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
       />
-      
+      {/* Pass setIsMenuOpen to Navigation if you use Navigation outside Header */}
       <main className="relative pt-24">
         <WaveDivider />
         <About />

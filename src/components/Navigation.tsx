@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
   activeSection: string;
   onSectionChange: (section: string) => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (open: boolean) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange, isMenuOpen, setIsMenuOpen }) => {
   const navItems = [
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
@@ -18,7 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange 
     { id: 'contact', label: 'Contact' }
   ];
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -60,31 +60,43 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange 
         {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </button>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Sidebar Drawer & Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-gradient-to-br from-gray-900 to-blue-900 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <>
+          {/* Overlay */}
+          <div
+            className="fixed inset-0 z-50 bg-black bg-opacity-40"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          {/* Sidebar Drawer */}
+          <div
+            className="fixed top-0 left-0 h-full w-64 bg-gray-900 z-60 shadow-lg transform transition-transform duration-300"
+            style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}
+          >
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 text-white p-2 hover:bg-white/10 rounded-lg"
+              className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-lg"
+              aria-label="Close menu"
             >
               <X className="h-6 w-6" />
             </button>
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`text-2xl font-medium transition-colors duration-200 ${
-                  activeSection === item.id 
-                    ? 'text-yellow-300' 
-                    : 'text-white hover:text-yellow-300'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            <nav className="flex flex-col mt-16 space-y-6 px-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`text-lg font-medium text-left transition-colors duration-200 ${
+                    activeSection === item.id
+                      ? 'text-yellow-300'
+                      : 'text-white hover:text-yellow-300'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
           </div>
-        </div>
+        </>
       )}
     </>
   );

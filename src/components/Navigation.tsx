@@ -74,7 +74,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
           <div className="fixed top-0 left-0 h-full w-80 max-w-[80vw] bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 shadow-2xl z-[9999] transform transition-transform duration-300 ease-in-out">
             {/* Header */}
             <div className="flex justify-between items-center p-6 border-b border-gray-700 bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800">
-              <h3 className="text-white font-semibold text-xl">Navigation</h3>
+              <h3 className="text-white font-semibold text-xl">Rochan.dev</h3>
               <button
                 onClick={() => setIsMenuOpen(false)}
                 className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"

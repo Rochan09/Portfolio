@@ -10,7 +10,8 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange, isMenuOpen, setIsMenuOpen }) => {
   const navItems = [
-    { id: 'about', label: 'About' },
+    { id: 'about', label: 'Home' },
+    { id: 'about-section', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },

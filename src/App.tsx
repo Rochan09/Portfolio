@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import About from './components/sections/About';
+import AboutSection from './components/sections/AboutSection';
 import Skills from './components/sections/Skills';
 import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
@@ -16,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'skills', 'experience', 'projects', 'achievements', 'contact'];
+      const sections = ['about', 'about-section', 'skills', 'experience', 'projects', 'achievements', 'contact'];
       const scrollPosition = window.scrollY + 100; // Offset for header
 
       for (const section of sections) {
@@ -76,6 +77,7 @@ function App() {
       <main className="relative pt-24">
         <WaveDivider />
         <About />
+        <AboutSection />
         <Skills />
         <Experience />
         <Projects />

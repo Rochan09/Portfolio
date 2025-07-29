@@ -10,23 +10,23 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className={`py-16 px-4 sm:px-6 lg:px-8 bg-white transition-all duration-1000 transform ${
+      className={`py-12 px-4 sm:px-6 lg:px-8 bg-white transition-all duration-1000 transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center mb-12">
-          <Wrench className="h-8 w-8 text-blue-600 mr-4" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+        <div className="flex items-center mb-8">
+          <Wrench className="h-6 w-6 text-blue-600 mr-3" />
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
             Projects
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 ${
+              className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-102 ${
                 isVisible ? 'animate-fade-in-up' : ''
               }`}
               style={{ animationDelay: `${index * 200}ms` }}
@@ -35,26 +35,26 @@ const Projects: React.FC = () => {
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-36 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 mb-3 text-sm leading-relaxed">
                   {project.description}
                 </p>
                 
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-3">
+                  <div className="flex flex-wrap gap-1">
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"
+                        className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded-full"
                       >
                         {tech}
                       </span>
@@ -62,14 +62,14 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="flex space-x-4">
+                <div className="flex space-x-3">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-gray-900 hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                    className="inline-flex items-center bg-gray-900 hover:bg-gray-800 text-white px-3 py-1.5 rounded-md text-sm transition-colors duration-200"
                   >
-                    <Github className="h-4 w-4 mr-2" />
+                    <Github className="h-3 w-3 mr-1" />
                     GitHub
                   </a>
                   
@@ -78,9 +78,9 @@ const Projects: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                      className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-md text-sm transition-colors duration-200"
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
+                      <ExternalLink className="h-3 w-3 mr-1" />
                       Live Demo
                     </a>
                   )}

@@ -47,15 +47,24 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'React Notes App',
-    description: 'Full-stack notes application with JWT authentication and CRUD functionality.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
-    imageUrl: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09',
-    liveUrl: 'https://notes-app-woad-nine.vercel.app'
+    title: 'AI Tools Explorer',
+    description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality. Built with modern technologies and deployed on Vercel.',
+    techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
+    githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
+    liveUrl: 'https://ai-tools-projects.vercel.app/'
   },
   {
     id: '2',
+    title: 'React Notes App',
+    description: 'Full-stack notes application with JWT authentication and CRUD functionality.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
+    imageUrl: '/Notes App Thumbnail.png',
+    githubUrl: 'https://github.com/Rochan09/Notes-App',
+    liveUrl: 'https://notes-app-woad-nine.vercel.app'
+  },
+  {
+    id: '3',
     title: 'Job Portal Web Application',
     description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
@@ -64,12 +73,12 @@ export const projects: Project[] = [
     liveUrl: 'https://job-portal-demo.example.com'
   },
   {
-    id: '3',
+    id: '4',
     title: 'My portfolio',
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09',
+    imageUrl: '/My Portfolio Thumbnail.png',
+    githubUrl: 'https://github.com/Rochan09/Portfolio',
     liveUrl: 'https://rochanportfolio.vercel.app'
   }
 ];

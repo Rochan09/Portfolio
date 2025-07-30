@@ -69,8 +69,8 @@ const About: React.FC = () => {
               <svg className="w-10 h-10" fill="url(#linkedin-gradient)" viewBox="0 0 24 24">
                 <defs>
                   <linearGradient id="linkedin-gradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0077B5" />
-                    <stop offset="100%" stop-color="#00A0DC" />
+                    <stop offset="0%" stopColor="#0077B5" />
+                    <stop offset="100%" stopColor="#00A0DC" />
                   </linearGradient>
                 </defs>
                 <rect width="24" height="24" rx="4" fill="url(#linkedin-gradient)" />

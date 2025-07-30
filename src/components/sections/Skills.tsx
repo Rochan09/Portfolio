@@ -25,14 +25,15 @@ const Skills: React.FC = () => {
   return (
     <section
       id="skills"
+      aria-labelledby="skills-heading"
       className={`py-16 px-4 sm:px-6 lg:px-8 transition-all duration-1000 transform ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-12">
-          <Lightbulb className="h-8 w-8 text-blue-600 mr-4" />
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <Lightbulb className="h-8 w-8 text-blue-600 mr-4" aria-hidden="true" />
+          <h2 id="skills-heading" className="text-3xl sm:text-4xl font-bold text-gray-900">
             Skills
           </h2>
         </div>
@@ -47,18 +48,21 @@ const Skills: React.FC = () => {
                   isVisible ? 'animate-fade-in-up' : ''
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
+                role="region"
+                aria-labelledby={`skill-category-${index}`}
               >
                 <div className="flex items-center mb-4">
-                  <IconComponent className="h-6 w-6 text-blue-600 mr-3" />
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <IconComponent className="h-6 w-6 text-blue-600 mr-3" aria-hidden="true" />
+                  <h3 id={`skill-category-${index}`} className="text-xl font-bold text-gray-900">
                     {skill.category}
                   </h3>
                 </div>
-                <div className="space-y-2">
-                  {skill.items.map((item) => (
+                <div className="space-y-2" role="list" aria-label={`${skill.category} skills`}>
+                  {skill.items.map((item, itemIndex) => (
                     <span
                       key={item}
                       className="inline-block bg-blue-50 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mr-2 mb-2"
+                      role="listitem"
                     >
                       {item}
                     </span>

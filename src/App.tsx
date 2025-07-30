@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
-import About from './components/sections/About';
-import AboutSection from './components/sections/AboutSection';
-import Skills from './components/sections/Skills';
-import Experience from './components/sections/Experience';
-import Projects from './components/sections/Projects';
-import Achievements from './components/sections/Achievements';
-import Contact from './components/sections/Contact';
 import BackToTop from './components/ui/BackToTop';
 import WaveDivider from './components/ui/WaveDivider';
+import LoadingSpinner from './components/ui/LoadingSpinner';
 import Navigation from './components/Navigation';
+
+// Lazy load section components
+const About = lazy(() => import('./components/sections/About'));
+const AboutSection = lazy(() => import('./components/sections/AboutSection'));
+const Skills = lazy(() => import('./components/sections/Skills'));
+const Experience = lazy(() => import('./components/sections/Experience'));
+const Projects = lazy(() => import('./components/sections/Projects'));
+const Achievements = lazy(() => import('./components/sections/Achievements'));
+const Contact = lazy(() => import('./components/sections/Contact'));
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -76,18 +79,20 @@ function App() {
       {/* Pass setIsMenuOpen to Navigation if you use Navigation outside Header */}
       <main className="relative pt-24">
         <WaveDivider />
-        <About />
-        <AboutSection />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Achievements />
-        <Contact />
+        <Suspense fallback={<LoadingSpinner />}>
+          <About />
+          <AboutSection />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Achievements />
+          <Contact />
+        </Suspense>
       </main>
       
-      <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 text-white py-8 px-4 text-center">
+      <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 text-white py-8 px-4 text-center" role="contentinfo" aria-label="Footer">
         <p className="text-gray-300">
-          &copy; 2025 Rochan Vardhan Boddepalli. All rights reserved.
+          &copy; 2024-2025 Rochan Vardhan Boddepalli. All rights reserved.
         </p>
       </footer>
       

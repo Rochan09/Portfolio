@@ -95,6 +95,19 @@ const Projects: React.FC = () => {
             </div>
           ))}
         </div>
+        
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://github.com/Rochan09"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition-colors duration-200"
+            aria-label="View all projects on GitHub"
+          >
+            <Github className="h-5 w-5 mr-2" aria-hidden="true" />
+            View More Projects
+          </a>
+        </div>
       </div>
     </section>
   );

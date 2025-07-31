@@ -11,8 +11,8 @@ export const personalInfo = {
 export const experiences: Experience[] = [
   {
     id: '2',
-    title: 'Software Trainee Intern',
     company: 'Krify Software Technologies',
+    title: 'Software Trainee Intern ',
     period: 'June 2024 – July 2024',
     description: [
       'Focused on Cyber Security and Web Technologies',
@@ -22,9 +22,9 @@ export const experiences: Experience[] = [
   },
   {
     id: '1',
-    title: 'Web Development Intern',
     company: 'Averixis Solutions',
-    period: 'June 2025 – August 2025',
+    title: 'Web Development Intern',
+    period: 'May 2025 – July 2025',
     description: [
       'Completed internship working on real-time projects using Google Cloud technologies',
       'Gained full-stack experience with front-end and back-end logic'
@@ -33,8 +33,8 @@ export const experiences: Experience[] = [
   },
   {
     id: '3',
-    title: 'Intern',
     company: 'Lomaa IT Solutions',
+    title: 'Full Stack Developer Intern',
     period: 'July 2025 – Present',
     description: [
       'Participating in comprehensive training across frontend and backend development, with subsequent integration into real-time projects upon completion.',
@@ -47,15 +47,6 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'AI Tools Explorer',
-    description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality. Built with modern technologies and deployed on Vercel.',
-    techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
-    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
-    liveUrl: 'https://ai-tools-projects.vercel.app/'
-  },
-  {
-    id: '2',
     title: 'React Notes App',
     description: 'Full-stack notes application with JWT authentication and CRUD functionality.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
@@ -64,7 +55,7 @@ export const projects: Project[] = [
     liveUrl: 'https://notes-app-woad-nine.vercel.app'
   },
   {
-    id: '3',
+    id: '2',
     title: 'Job Portal Web Application',
     description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
@@ -73,13 +64,22 @@ export const projects: Project[] = [
     liveUrl: 'https://job-portal-demo.example.com'
   },
   {
-    id: '4',
-    title: 'My portfolio',
+    id: '3',
+    title: 'My Portfolio',
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     imageUrl: '/My Portfolio Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/Portfolio',
     liveUrl: 'https://rochanportfolio.vercel.app'
+  },
+  {
+    id: '4',
+    title: 'AI Tools Explorer',
+    description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality. Built with modern technologies and deployed on Vercel.',
+    techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
+    githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
+    liveUrl: 'https://ai-tools-projects.vercel.app/'
   }
 ];
 

@@ -56,15 +56,6 @@ export const projects: Project[] = [
   },
   {
     id: '2',
-    title: 'Job Portal Web Application',
-    description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
-    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09/Job-Portal',
-    liveUrl: 'https://github.com/Rochan09/Job-Portal/blob/main/README.md'
-  },
-  {
-    id: '3',
     title: 'My Portfolio',
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
@@ -73,13 +64,22 @@ export const projects: Project[] = [
     liveUrl: 'https://rochanportfolio.vercel.app'
   },
   {
-    id: '4',
+    id: '3',
     title: 'AI Tools Explorer',
     description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality. Built with modern technologies and deployed on Vercel.',
     techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
     imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
     githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
     liveUrl: 'https://ai-tools-projects.vercel.app/'
+  },
+  {
+    id: '4',
+    title: 'Job Portal Web Application',
+    description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
+    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+    githubUrl: 'https://github.com/Rochan09/Job-Portal',
+    liveUrl: 'https://github.com/Rochan09/Job-Portal/blob/main/README.md'
   }
 ];
 

@@ -1,16 +1,9 @@
 import React from 'react';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-
 const About: React.FC = () => {
-  const visibleSections = useScrollAnimation();
-  const isVisible = visibleSections.has('about');
-
   return (
     <section
       id="about"
-      className={`relative py-16 px-4 sm:px-6 lg:px-8 transition-all duration-1000 transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className="relative py-16 px-4 sm:px-6 lg:px-8"
     >
       {/* Subtle geometric SVG background left side */}
       <svg className="absolute left-0 top-0 h-full w-1/2 opacity-10 -z-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,9 +15,9 @@ const About: React.FC = () => {
           </radialGradient>
         </defs>
       </svg>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left: Text Content */}
-        <div className="flex-1 text-center md:text-left flex flex-col items-center md:items-start">
+        <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 text-black">
             Hello, I am <span>Rochan Vardhan Boddepalli</span>
           </h1>
@@ -80,10 +73,10 @@ const About: React.FC = () => {
           </div>
         </div>
         {/* Right: Profile Image */}
-        <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0">
-          <div className="w-96 h-96 rounded-full bg-gradient-to-tr from-[#5fa6c9] to-[#b3b29b] p-2 flex items-center justify-center border-8 border-white overflow-hidden md:-translate-y-16 md:-translate-x-24">
+        <div className="flex-1 flex justify-center items-center">
+          <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-tr from-[#5fa6c9] to-[#b3b29b] p-2 flex items-center justify-center border-8 border-white overflow-hidden shadow-lg">
             {/* Replace src with your actual image path */}
-            <img src="/profile.jpg" alt="Profile" className="w-full h-full object-cover object-[center_10%] rounded-full scale-125" />
+            <img src="/profile.jpg" alt="Profile" className="w-full h-full object-cover object-center rounded-full" />
           </div>
         </div>
       </div>

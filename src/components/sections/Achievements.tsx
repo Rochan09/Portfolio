@@ -10,9 +10,7 @@ const Achievements: React.FC = () => {
   return (
     <section
       id="achievements"
-      className={`py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-50 to-orange-50 transition-all duration-1000 transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-100 to-orange-100"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-12">
@@ -32,9 +30,7 @@ const Achievements: React.FC = () => {
             {achievements.map((achievement, index) => (
               <div
                 key={achievement.id}
-                className={`bg-white rounded-2xl shadow-xl p-6 border-l-8 border-yellow-400 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${
-                  isVisible ? 'animate-fade-in-up' : ''
-                }`}
+                className="bg-white rounded-2xl shadow-xl p-6 border-l-8 border-yellow-400 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="flex items-start justify-between">
@@ -80,9 +76,7 @@ const Achievements: React.FC = () => {
             {certifications.map((cert, index) => (
               <div
                 key={cert.id}
-                className={`bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-l-4 border-blue-400 ${
-                  isVisible ? 'animate-fade-in-up' : ''
-                }`}
+                className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-l-4 border-blue-400"
                 style={{ animationDelay: `${(achievements.length + index) * 100}ms` }}
               >
                 <div className="flex items-center mb-4">

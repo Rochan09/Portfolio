@@ -69,7 +69,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-blue-100">
       <Header 
         activeSection={activeSection} 
         onSectionChange={handleSectionChange} 
@@ -78,7 +78,6 @@ function App() {
       />
       {/* Pass setIsMenuOpen to Navigation if you use Navigation outside Header */}
       <main className="relative pt-24">
-        <WaveDivider />
         <Suspense fallback={<LoadingSpinner />}>
           <About />
           <AboutSection />

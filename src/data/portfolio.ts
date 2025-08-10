@@ -55,15 +55,6 @@ export const projects: Project[] = [
     liveUrl: 'https://notes-app-woad-nine.vercel.app'
   },
   {
-    id: '2',
-    title: 'Job Portal Web Application',
-    description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
-    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09/Job-Portal',
-    liveUrl: 'https://github.com/Rochan09/Job-Portal/blob/main/README.md'
-  },
-  {
     id: '3',
     title: 'My Portfolio',
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
@@ -73,13 +64,31 @@ export const projects: Project[] = [
     liveUrl: 'https://rochanportfolio.vercel.app'
   },
   {
+    id: '5',
+    title: 'Currency Converter',
+    description: 'A simple and responsive currency converter built using HTML, CSS, and JavaScript.',
+    techStack: ['HTML', 'CSS', 'JavaScript'],
+    imageUrl: '/Currency Converter Thumbnail.png',
+    githubUrl: 'https://github.com/Rochan09/CurrencyConverter',
+    liveUrl: 'https://currencycircus.netlify.app/'
+  },
+  {
     id: '4',
     title: 'AI Tools Explorer',
-    description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality. Built with modern technologies and deployed on Vercel.',
+    description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality.',
     techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
     imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
     githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
     liveUrl: 'https://ai-tools-projects.vercel.app/'
+  },
+  {
+    id: '2',
+    title: 'Job Portal Web Application',
+    description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
+    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+    githubUrl: 'https://github.com/Rochan09/Job-Portal',
+    liveUrl: 'https://github.com/Rochan09/Job-Portal/blob/main/README.md'
   }
 ];
 
@@ -151,6 +160,12 @@ export const certifications: Certification[] = [
     title: 'Advanced Software Engineering Job Simulation',
     issuer: 'Forage',
     certificateUrl: '/certificates/forage-advanced-software-eng-certificate.pdf'
+  },
+  {
+    id: '6',
+    title: 'SQL for Beginners',
+    issuer: 'Scaler',
+    certificateUrl: '/certificates/SQL for Beginners.pdf'
   }
 ];
 

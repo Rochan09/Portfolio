@@ -11,9 +11,7 @@ const Projects: React.FC = () => {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className={`py-12 px-4 sm:px-6 lg:px-8 bg-white transition-all duration-1000 transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className="py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
@@ -27,9 +25,7 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-102 ${
-                isVisible ? 'animate-fade-in-up' : ''
-              }`}
+              className="bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-102 border border-gray-200 flex flex-col"
               style={{ animationDelay: `${index * 200}ms` }}
               role="article"
               aria-labelledby={`project-title-${project.id}`}
@@ -38,18 +34,18 @@ const Projects: React.FC = () => {
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-36 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-32 object-cover transition-transform duration-300 hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
               </div>
               
-              <div className="p-4">
+              <div className="p-4 flex-grow flex flex-col">
                 <h3 id={`project-title-${project.id}`} className="text-lg font-bold text-gray-900 mb-2">
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-3 text-sm leading-relaxed">
+                <p className="text-gray-600 mb-3 text-sm leading-relaxed flex-grow">
                   {project.description}
                 </p>
                 

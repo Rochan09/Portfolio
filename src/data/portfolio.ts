@@ -55,7 +55,11 @@ export const projects: Project[] = [
     liveUrl: 'https://notes-app-woad-nine.vercel.app'
   },
   {
+<<<<<<< HEAD
     id: '3',
+=======
+    id: '2',
+>>>>>>> 034ec701927543df1100733b7814de70a71dbdad
     title: 'My Portfolio',
     description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
@@ -64,6 +68,7 @@ export const projects: Project[] = [
     liveUrl: 'https://rochanportfolio.vercel.app'
   },
   {
+<<<<<<< HEAD
     id: '5',
     title: 'Currency Converter',
     description: 'A simple and responsive currency converter built using HTML, CSS, and JavaScript.',
@@ -74,6 +79,9 @@ export const projects: Project[] = [
   },
   {
     id: '4',
+=======
+    id: '3',
+>>>>>>> 034ec701927543df1100733b7814de70a71dbdad
     title: 'AI Tools Explorer',
     description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality.',
     techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
@@ -82,7 +90,11 @@ export const projects: Project[] = [
     liveUrl: 'https://ai-tools-projects.vercel.app/'
   },
   {
+<<<<<<< HEAD
     id: '2',
+=======
+    id: '4',
+>>>>>>> 034ec701927543df1100733b7814de70a71dbdad
     title: 'Job Portal Web Application',
     description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],

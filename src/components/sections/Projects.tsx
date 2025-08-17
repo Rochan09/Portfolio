@@ -1,11 +1,10 @@
 import React from 'react';
 import { Wrench, Github, ExternalLink } from 'lucide-react';
 import { projects } from '../../data/portfolio';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+
 
 const Projects: React.FC = () => {
-  const visibleSections = useScrollAnimation();
-  const isVisible = visibleSections.has('projects');
+  // const visibleSections = useScrollAnimation();
 
   return (
     <section
@@ -34,7 +33,7 @@ const Projects: React.FC = () => {
                 <img
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-32 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-48 object-contain bg-white transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
@@ -97,7 +96,7 @@ const Projects: React.FC = () => {
             href="https://github.com/Rochan09"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-base font-medium transition-colors duration-200"
+            className="inline-flex items-center bg-black hover:bg-gray-900 text-white px-4 py-2 rounded-md text-base font-medium transition-colors duration-200"
             aria-label="View all projects on GitHub"
           >
             <Github className="h-5 w-5 mr-2" aria-hidden="true" />

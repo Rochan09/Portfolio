@@ -48,7 +48,6 @@ export const projects: Project[] = [
   {
     id: '1',
     title: 'React Notes App',
-    description: 'Full-stack notes application with JWT authentication and CRUD functionality.',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
     imageUrl: '/Notes App Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/Notes-App',
@@ -57,7 +56,6 @@ export const projects: Project[] = [
   {
     id: '3',
     title: 'My Portfolio',
-    description: 'Personal portfolio website showcasing my projects, skills, achievements, and experience. Built with React and TypeScript.',
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
     imageUrl: '/My Portfolio Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/Portfolio',
@@ -66,57 +64,49 @@ export const projects: Project[] = [
   {
     id: '5',
     title: 'Currency Converter',
-    description: 'A simple and responsive currency converter built using HTML, CSS, and JavaScript.',
     techStack: ['HTML', 'CSS', 'JavaScript'],
     imageUrl: '/Currency Converter Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/CurrencyConverter',
     liveUrl: 'https://currencycircus.netlify.app/'
   },
   {
+    id: '6',
+    title: 'MovieBuddy',
+    techStack: ['React', 'TypeScript', 'TMDB API', 'Tailwind CSS', 'Vercel'],
+    imageUrl: '/MovieBuddy Thumbnail.png',
+    githubUrl: 'https://github.com/Rochan09/Movie-Buddy',
+    liveUrl: 'https://movie-buddy-one.vercel.app/'
+  },
+  {
     id: '4',
     title: 'AI Tools Explorer',
-    description: 'A fully responsive React web app showcasing 50+ AI tools with category filters and search functionality.',
     techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
     imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
     githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
     liveUrl: 'https://ai-tools-projects.vercel.app/'
   },
-  {
-    id: '2',
-    title: 'Job Portal Web Application',
-    description: 'Role-based job portal with separate interfaces for job seekers and employers. Deployed on Netlify with MongoDB Atlas backend.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'Netlify'],
-    imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09/Job-Portal',
-    liveUrl: 'https://github.com/Rochan09/Job-Portal/blob/main/README.md'
-  }
 ];
 
 export const skills: Skill[] = [
   {
     category: 'Languages',
-    items: ['Java', 'JavaScript', 'HTML', 'CSS', 'SQL'],
+    items: ['Java', 'SQL', 'HTML5', 'CSS3', 'JavaScript'],
     icons: ['Code', 'Database']
   },
   {
     category: 'Frameworks',
-    items: ['React', 'Angular', 'Django'],
+    items: ['React.js', 'Node.js', 'Express.js', 'Spring Boot', 'RESTful APIs'],
     icons: ['Layout', 'Zap']
   },
   {
-    category: 'Databases',
-    items: ['MongoDB', 'MongoDB Atlas'],
-    icons: ['Database', 'Cloud']
-  },
-  {
-    category: 'Tools & Technologies',
-    items: ['REST API', 'GitHub', 'VS Code', 'Postman', 'JWT', 'Bcrypt'],
+    category: 'Tools & Platforms',
+    items: ['Git', 'GitHub', 'Visual Studio Code', 'Eclipse', 'Postman', 'Agile SDLC', 'CI/CD', 'Render', 'Vercel'],
     icons: ['Tool', 'Github']
   },
   {
-    category: 'Soft Skills',
-    items: ['Communication', 'Teamwork', 'Problem Solving'],
-    icons: ['Users', 'MessageSquare']
+    category: 'Databases & Cloud',
+    items: ['MySQL', 'MongoDB Atlas', 'AWS'],
+    icons: ['Database', 'Cloud']
   }
 ];
 
@@ -173,6 +163,6 @@ export const contactInfo: ContactInfo = {
   email: 'rochanvardhan2004@gmail.com',
   linkedin: 'https://www.linkedin.com/in/rochan-vardhan-boddepalli',
   github: 'https://github.com/Rochan09',
-  phone: '+91 xxxxxxxxxx',
+  phone: '+91-9391870198',
   location: 'Srikakulam,Andhra Pradesh,India'
 };

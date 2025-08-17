@@ -6,8 +6,8 @@ import LoadingSpinner from './components/ui/LoadingSpinner';
 import Navigation from './components/Navigation';
 
 // Lazy load section components
+const Home = lazy(() => import('./components/sections/home'));
 const About = lazy(() => import('./components/sections/About'));
-const AboutSection = lazy(() => import('./components/sections/AboutSection'));
 const Skills = lazy(() => import('./components/sections/Skills'));
 const Experience = lazy(() => import('./components/sections/Experience'));
 const Projects = lazy(() => import('./components/sections/Projects'));
@@ -79,8 +79,8 @@ function App() {
       {/* Pass setIsMenuOpen to Navigation if you use Navigation outside Header */}
       <main className="relative pt-24">
         <Suspense fallback={<LoadingSpinner />}>
+          <Home />
           <About />
-          <AboutSection />
           <Skills />
           <Experience />
           <Projects />

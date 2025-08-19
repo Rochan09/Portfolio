@@ -6,6 +6,9 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 const Experience: React.FC = () => {
   const visibleSections = useScrollAnimation();
   const isVisible = visibleSections.has('experience');
+  
+  // Animation: slide in from left when visible
+  // We'll use intersection observer logic from useScrollAnimation
 
   return (
     <section
@@ -25,8 +28,19 @@ const Experience: React.FC = () => {
           {experiences.map((exp, index) => (
             <div
               key={exp.id}
-              className="bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-102 border border-gray-200 flex flex-col"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className={
+                `bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-700 transform hover:-translate-y-1 hover:scale-102 border border-gray-200 flex flex-col ` +
+                `animate-slideinleft opacity-0` // will be overridden by inline style when visible
+              }
+              style={
+                isVisible
+                  ? {
+                      animation: `slideinleft 0.8s cubic-bezier(0.4,0,0.2,1) forwards`,
+                      animationDelay: `${index * 0.15}s`,
+                      opacity: 1
+                    }
+                  : { opacity: 0 }
+              }
               role="article"
               aria-labelledby={`experience-title-${exp.id}`}
             >
@@ -40,7 +54,6 @@ const Experience: React.FC = () => {
                 <div className="text-gray-600 mb-4 italic">
                   {exp.period}
                 </div>
-                
                 <ul className="space-y-2 mb-4 flex-grow" aria-label={`Responsibilities at ${exp.company}`}>
                   {exp.description.map((item, idx) => (
                     <li key={idx} className="text-gray-700 flex items-start text-sm">
@@ -49,7 +62,6 @@ const Experience: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                
                 {exp.certificateUrl && (
                   <a
                     href={exp.certificateUrl}

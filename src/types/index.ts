@@ -5,6 +5,7 @@ export interface Experience {
   period: string;
   description: string[];
   certificateUrl?: string;
+  certificateLabel?: string;
 }
 
 export interface Project {

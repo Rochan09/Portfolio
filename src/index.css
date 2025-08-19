@@ -1,3 +1,16 @@
+@keyframes slideinleft {
+	0% {
+		opacity: 0;
+		transform: translateX(-80px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+.animate-slideinleft {
+	animation: slideinleft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

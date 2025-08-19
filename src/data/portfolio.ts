@@ -11,33 +11,34 @@ export const personalInfo = {
 export const experiences: Experience[] = [
   {
     id: '2',
-    company: 'Krify Software Technologies',
+    company: 'Krify Software Technologies, Kakinada',
     title: 'Software Trainee Intern ',
     period: 'June 2024 – July 2024',
     description: [
       'Focused on Cyber Security and Web Technologies',
+      'Performed security testing using Burp Suite and OWASP Top 10 guidelines.',
       'Worked on live secure web development projects'
     ],
     certificateUrl: '/certificates/krify-certificate.pdf'
   },
   {
-    id: '1',
-    company: 'Averixis Solutions',
-    title: 'Web Development Intern',
+    id: 'sf1',
+    company: 'Salesforce - Smart Bridge',
+    title: 'Salesforce Virtual Internship',
     period: 'May 2025 – July 2025',
     description: [
-      'Completed internship working on real-time projects using Google Cloud technologies',
-      'Gained full-stack experience with front-end and back-end logic'
+      'Completed a virtual internship focused on Salesforce CRM, cloud solutions, and business process automation.',
+      'Worked on hands-on Trailhead modules and real-world business scenarios.'
     ],
-    certificateUrl: '/certificates/averixis-certificate.pdf'
+    certificateUrl: '/certificates/Salesforce Developer.pdf'
   },
   {
     id: '3',
-    company: 'Lomaa IT Solutions',
+    company: 'Lomaa IT Solutions, Visakhapatnam',
     title: 'Full Stack Developer Intern',
     period: 'July 2025 – Present',
     description: [
-      'Participating in comprehensive training across frontend and backend development, with subsequent integration into real-time projects upon completion.',
+      'Collaborated in Agile teams of 4-6 members to design, develop, and deploy full-stack modules.',
       'Engage in weekly meetings with industry professionals to gain practical insights and enhance professional development.'
     ],
     certificateUrl: '/certificates/Looma.pdf'
@@ -156,6 +157,18 @@ export const certifications: Certification[] = [
     title: 'SQL for Beginners',
     issuer: 'Scaler',
     certificateUrl: '/certificates/SQL for Beginners.pdf'
+  },
+  {
+    id: '7',
+    title: 'Programming in Python',
+    issuer: 'Coursera',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/RD7Z5YSD52GC'
+  },
+  {
+    id: '8',
+    title: 'Python for Data Science, AI & Development',
+    issuer: 'Coursera',
+    certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/0Z92CWUY6BPB'
   }
 ];
 

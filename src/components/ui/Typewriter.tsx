@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const words = [
   '✨Full stack Developer',
   '🤖AI Enthusiastic',
+  '💻Salesforce Admin'
 ];
 
 const Typewriter: React.FC = () => {

@@ -1,4 +1,4 @@
-import { Experience, Project, Skill, Achievement, Certification, ContactInfo } from '../types';
+import { Experience, Project, Skill, Achievement, ContactInfo } from '../types';
 
 export const personalInfo = {
   name: "Rochan Vardhan Boddepalli",
@@ -118,57 +118,6 @@ export const achievements: Achievement[] = [
     description: 'Published "FitIntel: A Healthy Food & Exercise Recommendation Application Using Machine Learning" in IJRPR, Vol. 5, Issue 11, Nov 2024.',
     link: '/papers/FitIntel Term paper IJRPR35661.pdf',
     type: 'publication'
-  }
-];
-
-export const certifications: Certification[] = [
-  {
-    id: '1',
-    title: 'Core Java Specialization',
-    issuer: 'Coursera',
-    certificateUrl: '/certificates/core-java-certificate.pdf'
-  },
-  {
-    id: '2',
-    title: 'Introduction to Generative AI',
-    issuer: 'Coursera',
-    certificateUrl: '/certificates/generative-ai-certificate.pdf'
-  },
-  {
-    id: '3',
-    title: 'Prompt Engineering for ChatGPT',
-    issuer: 'Coursera',
-    certificateUrl: '/certificates/prompt-engineering-certificate.pdf'
-  },
-  {
-    id: '4',
-    title: 'AWS Academy Machine Learning Foundations',
-    issuer: 'AWS Academy',
-    certificateUrl: '/certificates/aws-ml-certificate.pdf'
-  },
-  {
-    id: '5',
-    title: 'Advanced Software Engineering Job Simulation',
-    issuer: 'Forage',
-    certificateUrl: '/certificates/forage-advanced-software-eng-certificate.pdf'
-  },
-  {
-    id: '6',
-    title: 'SQL for Beginners',
-    issuer: 'Scaler',
-    certificateUrl: '/certificates/SQL for Beginners.pdf'
-  },
-  {
-    id: '7',
-    title: 'Programming in Python',
-    issuer: 'Coursera',
-    certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/RD7Z5YSD52GC'
-  },
-  {
-    id: '8',
-    title: 'Python for Data Science, AI & Development',
-    issuer: 'Coursera',
-    certificateUrl: 'https://www.coursera.org/account/accomplishments/verify/0Z92CWUY6BPB'
   }
 ];
 

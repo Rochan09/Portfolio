@@ -96,7 +96,7 @@ const Projects: React.FC = () => {
             href="https://github.com/Rochan09"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-black hover:bg-gray-900 text-white px-4 py-2 rounded-md text-base font-medium transition-colors duration-200"
+            className="inline-flex items-center bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-4 py-2 rounded-md text-base font-medium transition-colors duration-200"
             aria-label="View all projects on GitHub"
           >
             <Github className="h-5 w-5 mr-2" aria-hidden="true" />

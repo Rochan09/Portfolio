@@ -1,3 +1,8 @@
+body {
+	min-height: 100vh;
+	background: radial-gradient(ellipse at 50% 30%, #e0e7ff 60%, #c7d2fe 100%, #fff 120%);
+	box-shadow: 0 0 120px 40px #a5b4fc inset, 0 0 200px 80px #818cf8 inset;
+}
 @keyframes slideinleft {
 	0% {
 		opacity: 0;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, Award, ExternalLink } from 'lucide-react';
-import { achievements, certifications } from '../../data/portfolio';
+import { achievements} from '../../data/portfolio';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const Achievements: React.FC = () => {
@@ -16,7 +16,7 @@ const Achievements: React.FC = () => {
         <div className="flex items-center mb-12">
           <Trophy className="h-8 w-8 text-yellow-600 mr-4" />
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Achievements & Certifications
+            Achievements
           </h2>
         </div>
         
@@ -66,45 +66,6 @@ const Achievements: React.FC = () => {
           </div>
         </div>
 
-        {/* Certifications */}
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center">
-            <Award className="h-6 w-6 text-blue-600 mr-3" />
-            Professional Certifications
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
-              <div
-                key={cert.id}
-                className="bg-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border-l-4 border-blue-400"
-                style={{ animationDelay: `${(achievements.length + index) * 100}ms` }}
-              >
-                <div className="flex items-center mb-4">
-                  <div className="bg-blue-100 p-2 rounded-full mr-3">
-                    <Award className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div className="text-sm text-gray-600 font-medium">
-                    {cert.issuer}
-                  </div>
-                </div>
-                
-                <h4 className="text-lg font-bold text-gray-900 mb-4 leading-tight">
-                  {cert.title}
-                </h4>
-                
-                <a
-                  href={cert.certificateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-                >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Certificate
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

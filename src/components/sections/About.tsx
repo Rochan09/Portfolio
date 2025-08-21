@@ -22,29 +22,72 @@ const About: React.FC = () => {
           </radialGradient>
         </defs>
       </svg>
-      
-      <div className="max-w-4xl mx-auto">
+
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
             About Me
           </h2>
-          {/* Removed typewriter effect here as requested */}
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
         </div>
-        
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-white/20">
-          <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-            <p className="text-lg md:text-xl mb-6 leading-relaxed">
-              Hi! I'm <span className="font-semibold text-blue-700">Rochan Vardhan Boddepalli</span>, a passionate and motivated Full-Stack Web Developer with hands-on experience in building modern web applications using React, Node.js, MongoDB, and Google Cloud tools. I thrive in dynamic environments where I can solve real-world problems through code and continuous learning.
-            </p>
-            
-            <p className="text-lg md:text-xl mb-6 leading-relaxed">
-              Currently pursuing my B.Tech in Information Technology at <span className="font-semibold text-blue-700">GMR Institute of Technology</span>, I've completed multiple internships where I developed secure, scalable, and user-friendly applications. I'm always eager to explore new technologies, collaborate with innovative teams, and deliver impactful digital solutions.
-            </p>
-            
-            <p className="text-lg md:text-xl leading-relaxed">
-              Beyond coding, I enjoy working on projects that challenge my problem-solving skills and allow me to blend creativity with functionality. <span className="font-semibold text-blue-700">Let's build something awesome together!</span>
-            </p>
+
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+          {/* Left: About Me Text Only */}
+          <div className="flex-1">
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl border border-white/20 w-full">
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                  I’m <span className="font-semibold text-blue-700">Rochan Vardhan Boddepalli</span> — a creative full-stack developer passionate about building clean, interactive, and responsive web apps. I love exploring new tech, solving real-world problems, and collaborating with others to deliver impactful solutions.
+                </p>
+                <p className="text-lg md:text-xl mb-6 leading-relaxed">
+                  I’m currently pursuing my B.Tech in Information Technology at <span className="font-semibold text-blue-700">GMR Institute of Technology</span>. I’ve interned at top companies, contributed to open-source, and enjoy learning on platforms like LeetCode and GitHub.
+                </p>
+                <p className="text-lg md:text-xl leading-relaxed">
+                  Outside of coding, I enjoy creative projects, tech meetups, and sharing knowledge with the community. <span className="font-semibold text-blue-700">Let’s connect and create something amazing!</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Two Cards */}
+          <div className="flex flex-col gap-6 w-full md:w-80">
+            {/* Card 1: Profile Info */}
+            <div className="bg-white/80 rounded-2xl shadow-lg p-6 flex flex-col items-start border border-blue-100">
+              <div className="text-xl font-bold text-gray-900 mb-2">M. Rochan Vardhan</div>
+              <div className="text-gray-700 flex items-center mb-1">
+                <span className="material-icons text-blue-600 mr-2">📩</span>
+                rochanvardhan2004@gmail.com
+              </div>
+              <div className="text-gray-700 flex items-center mb-1">
+                <span className="material-icons text-blue-600 mr-2">🏫</span>
+                B.Tech – Information Technology
+              </div>
+              <div className="text-gray-700 flex items-center">
+                <span className="material-icons text-blue-600 mr-2">📍</span>
+                Rajam, Andhra Pradesh
+              </div>
+            </div>
+            {/* Card 2: Resume Download (Simple) */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-start border">
+              <div className="text-lg font-bold text-gray-900 mb-4">Resume</div>
+              <div className="flex flex-col gap-2 w-full">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-4 py-2 rounded-md border border-blue-500 text-blue-700 font-semibold text-center hover:bg-blue-50 transition-colors"
+                >
+                  View Resume
+                </a>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="w-full px-4 py-2 rounded-md border border-purple-500 text-purple-700 font-semibold text-center hover:bg-purple-50 transition-colors"
+                >
+                  Download Resume
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

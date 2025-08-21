@@ -30,26 +30,10 @@ const About: React.FC = () => {
           </h2>
           <div className="flex flex-col sm:flex-row gap-6 items-center mb-6">
             <a
-              href="/resume.pdf"
-              download
-              className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-lg font-semibold text-lg transition-all duration-200 border-2 border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300/50 gap-2 shadow-lg hover:scale-105"
+              href="#projects"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-blue-600 text-blue-700 hover:bg-blue-50 px-7 py-3 rounded-lg font-semibold text-lg transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300/50 gap-2 shadow-lg hover:scale-105"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
-              </svg>
-              Download Resume
-            </a>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-900 px-7 py-3 rounded-lg font-semibold text-lg transition-all duration-200 border-2 border-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-300/50 gap-2 shadow-lg hover:scale-105"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                <polyline points="9 7 15 3 15 8" />
-              </svg>
-              View Resume
+              View my work
             </a>
           </div>
           {/* Social Icons Row */}

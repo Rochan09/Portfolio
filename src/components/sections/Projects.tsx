@@ -10,7 +10,7 @@ const Projects: React.FC = () => {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="py-12 px-4 sm:px-6 lg:px-8"
+    className="py-16 px-4 sm:px-6 lg:px-8 section-transition bg-gradient-to-br from-yellow-100 via-orange-50 to-pink-100"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
@@ -24,19 +24,38 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-102 border border-gray-200 flex flex-col"
+              className="bg-white/60 backdrop-blur-md rounded-2xl border border-blue-200 shadow-xl hover:shadow-2xl hover:bg-white/80 transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 flex flex-col"
               style={{ animationDelay: `${index * 200}ms` }}
               role="article"
               aria-labelledby={`project-title-${project.id}`}
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={project.imageUrl}
-                  alt={project.title}
-                  className="w-full h-48 object-contain bg-white transition-transform duration-300 hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Open live demo of ${project.title}`}
+                  >
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-48 object-contain bg-white transition-transform duration-300 hover:scale-105 cursor-pointer"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+                  </a>
+                ) : (
+                  <>
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-48 object-contain bg-white transition-transform duration-300 hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+                  </>
+                )}
               </div>
               
               <div className="p-4 flex-grow flex flex-col">

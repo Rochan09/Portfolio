@@ -22,13 +22,13 @@ const Skills: React.FC = () => {
     return icons[iconName as keyof typeof icons] || Code;
   };
 
-  return (
-    <section
-      id="skills"
-      aria-labelledby="skills-heading"
-      className={`py-16 px-4 sm:px-6 lg:px-8 transition-all duration-1000 transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+    return (
+      <section
+        id="skills"
+        aria-labelledby="skills-heading"
+        className={`py-16 px-4 sm:px-6 lg:px-8 transition-all duration-1000 transform ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        } bg-gradient-to-br from-green-100 via-blue-50 to-cyan-100`}
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-12">

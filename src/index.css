@@ -1,3 +1,16 @@
+@keyframes glow {
+	0%, 100% {
+		opacity: 0.6;
+		box-shadow: 0 0 40px 20px #a5b4fc, 0 0 80px 40px #818cf8;
+	}
+	50% {
+		opacity: 1;
+		box-shadow: 0 0 80px 40px #818cf8, 0 0 120px 60px #a5b4fc;
+	}
+}
+.animate-glow {
+	animation: glow 2.5s ease-in-out infinite;
+}
 body {
 	min-height: 100vh;
 	background: radial-gradient(ellipse at 50% 30%, #e0e7ff 60%, #c7d2fe 100%, #fff 120%);

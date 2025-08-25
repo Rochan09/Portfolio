@@ -8,9 +8,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about-section"
-      className={`relative py-8 px-4 sm:px-6 lg:px-8 transition-all duration-1000 transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className={`relative py-8 px-4 sm:px-6 lg:px-8 section-transition${isVisible ? ' visible' : ''} bg-gradient-to-br from-pink-100 via-blue-50 to-purple-100`}
     >
       {/* Subtle geometric SVG background right side */}
       <svg className="absolute right-0 top-0 h-full w-1/2 opacity-10 -z-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +41,7 @@ const About: React.FC = () => {
                   I’m currently pursuing my B.Tech in Information Technology at <span className="font-semibold text-blue-700">GMR Institute of Technology</span>. I’ve interned at top companies, contributed to open-source, and enjoy learning on platforms like LeetCode and GitHub.
                 </p>
                 <p className="text-lg md:text-xl leading-relaxed">
-                  Outside of coding, I enjoy creative projects, tech meetups, and sharing knowledge with the community. <span className="font-semibold text-blue-700">Let’s connect and create something amazing!</span>
+                  Outside of coding, I enjoy working on creative side projects, attending tech meetups, and sharing knowledge with the community. <span className="font-semibold text-blue-700">Let’s connect and create something amazing!🚀</span>
                 </p>
               </div>
             </div>
@@ -53,10 +51,10 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-6 w-full md:w-80">
             {/* Card 1: Profile Info */}
             <div className="bg-white/80 rounded-2xl shadow-lg p-6 flex flex-col items-start border border-blue-100">
-              <div className="text-xl font-bold text-gray-900 mb-2">M. Rochan Vardhan</div>
+              <div className="text-xl font-bold text-gray-900 mb-2">Rochan Vardhan Boddepalli</div>
               <div className="text-gray-700 flex items-center mb-1">
                 <span className="material-icons text-blue-600 mr-2">📩</span>
-                rochanvardhan2004@gmail.com
+                <a href="mailto:rochanvardhan2004@gmail.com" className="text-black-700 hover:underline">rochanvardhan2004@gmail.com</a>
               </div>
               <div className="text-gray-700 flex items-center mb-1">
                 <span className="material-icons text-blue-600 mr-2">🏫</span>
@@ -77,14 +75,14 @@ const About: React.FC = () => {
                   rel="noopener noreferrer"
                   className="w-full px-4 py-2 rounded-md border border-blue-500 text-blue-700 font-semibold text-center hover:bg-blue-50 transition-colors"
                 >
-                  View Resume
+                  🧾View Resume
                 </a>
                 <a
                   href="/resume.pdf"
                   download
                   className="w-full px-4 py-2 rounded-md border border-purple-500 text-purple-700 font-semibold text-center hover:bg-purple-50 transition-colors"
                 >
-                  Download Resume
+                  📥Download Resume
                 </a>
               </div>
             </div>

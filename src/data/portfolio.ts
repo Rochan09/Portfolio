@@ -15,9 +15,9 @@ export const experiences: Experience[] = [
     title: 'Software Trainee Intern ',
     period: 'June 2024 – July 2024',
     description: [
-      'Focused on Cyber Security and Web Technologies',
-      'Performed security testing using Burp Suite and OWASP Top 10 guidelines.',
-      'Worked on live secure web development projects'
+      'Performed security testing using Burp Suite and OWASP Top 10 guidelines to identify vulnerabilities.',
+      'Contributed to the development of secure web applications, ensuring compliance with cybersecurity best practices.',
+      'Gained hands-on experience in cybersecurity tools and modern web technologies.'
     ],
     certificateUrl: '/certificates/krify-certificate.pdf'
   },
@@ -28,7 +28,8 @@ export const experiences: Experience[] = [
     period: 'May 2025 – July 2025',
     description: [
       'Completed a virtual internship focused on Salesforce CRM, cloud solutions, and business process automation.',
-      'Worked on hands-on Trailhead modules and real-world business scenarios.'
+      'Built and tested real-world business workflows using Salesforce Trailhead modules.',
+      'Developed hands-on skills in cloud-based platforms, CRM systems, and automation tools.'
     ],
     certificateUrl: '/certificates/Salesforce Developer.pdf'
   },
@@ -38,8 +39,9 @@ export const experiences: Experience[] = [
     title: 'Full Stack Developer Intern',
     period: 'July 2025 – Present',
     description: [
-      'Collaborated in Agile teams of 4-6 members to design, develop, and deploy full-stack modules.',
-      'Engage in weekly meetings with industry professionals to gain practical insights and enhance professional development.'
+      'Collaborated in Agile teams of 4–6 to design, develop, and deploy full-stack modules using React, Node.js, and MongoDB.',
+      'Built and optimized REST APIs, improving response time and application performance.',
+      'Engaged in weekly sessions with industry experts to gain practical insights and enhance professional development.'
     ],
     certificateUrl: '/certificates/Looma.pdf'
   }

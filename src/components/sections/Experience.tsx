@@ -14,7 +14,7 @@ const Experience: React.FC = () => {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="py-12 px-4 sm:px-6 lg:px-8"
+    className="py-16 px-4 sm:px-6 lg:px-8 section-transition bg-gradient-to-br from-orange-100 via-yellow-50 to-red-100"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">

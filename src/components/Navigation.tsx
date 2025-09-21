@@ -30,11 +30,15 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
   }, [isMenuOpen]);
 
   const handleNavClick = (sectionId: string) => {
-    // Add smooth scroll behavior
+    // Use instant scrolling for faster navigation
     const element = document.getElementById(sectionId);
     if (element) {
+      // Check if user prefers reduced motion or if it's mobile
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isMobile = window.innerWidth <= 1024;
+      
       element.scrollIntoView({ 
-        behavior: 'smooth', 
+        behavior: (prefersReducedMotion || isMobile) ? 'auto' : 'smooth', 
         block: 'start',
         inline: 'nearest'
       });
@@ -86,57 +90,55 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
       {/* Mobile Menu Button - Right Side */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden text-white dark:text-gray-200 p-3 hover:bg-white/10 dark:hover:bg-black/20 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-180 backdrop-blur-sm border border-white/10 dark:border-gray-600/20"
+        className="md:hidden text-white dark:text-gray-200 p-3 hover:bg-white/10 dark:hover:bg-black/20 rounded-xl transition-all duration-200 transform hover:scale-105 hover:rotate-180 backdrop-blur-sm border border-white/10 dark:border-gray-600/20"
         aria-label="Toggle menu"
       >
-        {isMenuOpen ? <X className="h-6 w-6 transition-transform duration-300" /> : <Menu className="h-6 w-6 transition-transform duration-300" />}
+        {isMenuOpen ? <X className="h-6 w-6 transition-transform duration-150" /> : <Menu className="h-6 w-6 transition-transform duration-150" />}
       </button>
 
-      {/* Mobile Menu - Slides from Top Left */}
+      {/* Mobile Menu - Clean White Card Style */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 z-[9999]">
           {/* Backdrop Overlay */}
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-500 ease-out"
+            className="absolute inset-0 bg-black/50 transition-all duration-200 ease-out"
             onClick={() => setIsMenuOpen(false)}
           />
           
-          {/* Menu Content - Slides Down from Top Left */}
-          <div className="absolute top-20 left-6 w-80 max-w-[80vw] bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-blue-800/95 dark:from-gray-800/95 dark:via-gray-900/95 dark:to-black/95 backdrop-blur-xl border border-white/10 dark:border-gray-600/20 rounded-2xl shadow-2xl transform transition-all duration-500 ease-out animate-[slideDownFromTopLeft_0.5s_ease-out_forwards] origin-top-left">
-            {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-white/10 dark:border-gray-600/20">
-              <h3 className="text-white dark:text-gray-200 font-semibold text-xl bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent transition-all duration-300">Rochan.dev</h3>
+          {/* Menu Content - Clean White Card positioned right */}
+          <div className="absolute top-24 right-6 w-64 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transition-all duration-250 ease-out animate-[slideDownRight_0.25s_ease-out_forwards] origin-top-right">
+            {/* Close button in top right */}
+            <div className="absolute top-3 right-3">
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white dark:text-gray-200 p-2 hover:bg-white/10 dark:hover:bg-black/20 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-90 border border-white/10 dark:border-gray-600/20"
+                className="text-gray-600 dark:text-gray-400 p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-all duration-200"
                 aria-label="Close menu"
               >
-                <X className="h-6 w-6 transition-transform duration-300" />
+                <X className="h-5 w-5" />
               </button>
             </div>
             
-            {/* Navigation Items */}
-            <nav className="flex flex-col p-4 space-y-2">
+            {/* Navigation Items - Clean List Style */}
+            <nav className="flex flex-col py-4 px-2">
               {navItems.map((item, index) => {
                 const isActive = activeSection === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`text-left p-4 rounded-xl transition-all duration-500 ${
+                    className={`text-left py-3 px-4 mx-2 rounded-lg transition-all duration-200 text-base font-medium ${
                       isActive
-                        ? 'text-yellow-300 bg-gradient-to-r from-yellow-400/10 to-yellow-300/10 border border-yellow-300/20 shadow-lg backdrop-blur-sm scale-[1.02]' 
-                        : 'text-white dark:text-gray-200 border border-transparent'
+                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' 
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50'
                     }`}
                     style={{ 
-                      transitionDelay: `${index * 100}ms`,
-                      animationDelay: `${(index * 150) + 200}ms`,
-                      animation: `slideInFromTop 0.5s ease-out forwards ${(index * 100) + 200}ms`,
+                      animationDelay: `${(index * 30) + 100}ms`,
+                      animation: `fadeInDown 0.3s ease-out forwards ${(index * 30) + 100}ms`,
                       opacity: 0,
-                      transform: 'translateY(-20px)'
+                      transform: 'translateY(-10px)'
                     }}
                   >
-                    <span className="text-lg font-medium">{item.label}</span>
+                    {item.label}
                   </button>
                 );
               })}

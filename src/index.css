@@ -93,31 +93,42 @@
 	}
 }
 
-/* Smooth scrolling */
+/* Fast scrolling for all devices */
 * {
-	scroll-behavior: smooth;
+	scroll-behavior: auto;
 }
 
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: auto;
 }
 
-/* Section transitions */
+/* Optional smooth scrolling for desktop only (if preferred) */
+@media (min-width: 1024px) {
+	* {
+		scroll-behavior: smooth;
+	}
+	
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+/* Section transitions - Faster for all devices */
 .section-transition {
-	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	transform: translateY(0);
 	opacity: 1;
 }
 
 .section-entering {
 	opacity: 0;
-	transform: translateY(40px);
+	transform: translateY(20px);
 }
 
 .section-entered {
 	opacity: 1;
 	transform: translateY(0);
-	transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Menu animations */
@@ -180,6 +191,95 @@ body {
 }
 .animate-slideinleft {
 	animation: slideinleft 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+/* Fast mobile menu animations */
+@keyframes slideDownFromTopLeft {
+	0% {
+		opacity: 0;
+		transform: scale(0.95) translateY(-20px) translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(0) translateX(0);
+	}
+}
+
+@keyframes slideInFromTop {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes scaleIn {
+	0% {
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0.9);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(-20px) scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0) scale(1);
+	}
+}
+
+@keyframes slideDownRight {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px) scale(0.95);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Mobile optimized animations - Even faster */
+@media (max-width: 768px) {
+	.animate-slideinleft {
+		animation: slideinleft 0.2s cubic-bezier(0.4,0,0.2,1) forwards;
+	}
+	
+	/* Instant section transitions on mobile */
+	.section-transition {
+		transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	
+	.section-entered {
+		transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	
+	/* Reduce transform distance for faster perception */
+	.section-entering {
+		opacity: 0;
+		transform: translateY(10px);
+	}
 }
 @tailwind base;
 @tailwind components;

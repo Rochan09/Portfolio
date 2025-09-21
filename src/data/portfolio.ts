@@ -88,14 +88,6 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/Rochan09/Movie-Buddy',
     liveUrl: 'https://movie-buddy-one.vercel.app/'
   },
-  {
-    id: '4',
-    title: 'AI Tools Explorer',
-    techStack: ['React', 'Tailwind CSS', 'JSON', 'Vercel'],
-    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80',
-    githubUrl: 'https://github.com/Rochan09/AI-Tools-Projects',
-    liveUrl: 'https://ai-tools-projects.vercel.app/'
-  },
 ];
 
 export const skills: Skill[] = [

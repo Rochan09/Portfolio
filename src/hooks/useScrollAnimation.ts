@@ -12,7 +12,7 @@ export const useScrollAnimation = () => {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '-50px' }
+      { threshold: 0.2, rootMargin: '-20px' }
     );
 
     const sections = document.querySelectorAll('section[id]');
@@ -28,16 +28,31 @@ export const useBackToTop = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 300);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowBackToTop(window.scrollY > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Use instant scrolling for faster response
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth <= 1024;
+    
+    window.scrollTo({ 
+      top: 0, 
+      behavior: (prefersReducedMotion || isMobile) ? 'auto' : 'smooth' 
+    });
   };
 
   return { showBackToTop, scrollToTop };

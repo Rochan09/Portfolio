@@ -50,7 +50,7 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     id: '1',
-    title: 'React Notes App',
+    title: 'Notes App',
     techStack: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
     imageUrl: '/Notes App Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/Notes-App',

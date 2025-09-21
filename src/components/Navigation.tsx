@@ -53,7 +53,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
       </div>
       
       {/* Desktop Navigation - Center */}
-      <nav className="hidden md:flex items-center space-x-2 bg-white/5 rounded-xl p-1 backdrop-blur-sm transition-all duration-500 ease-out">
+      <nav className="hidden md:flex items-center space-x-2 bg-white/5 dark:bg-black/20 rounded-xl p-1 backdrop-blur-sm transition-all duration-500 ease-out">
         {navItems.map((item, index) => {
           const isActive = activeSection === item.id;
           return (
@@ -63,7 +63,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
               className={`relative px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
                 isActive
                   ? 'bg-gradient-to-r from-yellow-400/20 to-yellow-300/20 text-yellow-300 shadow-lg backdrop-blur-sm border border-yellow-300/30 scale-105' 
-                  : 'text-white'
+                  : 'text-white dark:text-gray-200'
               }`}
               style={{ 
                 transitionDelay: `${index * 50}ms`,
@@ -86,7 +86,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
       {/* Mobile Menu Button - Right Side */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden text-white p-3 hover:bg-white/10 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-180 backdrop-blur-sm border border-white/10"
+        className="md:hidden text-white dark:text-gray-200 p-3 hover:bg-white/10 dark:hover:bg-black/20 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-180 backdrop-blur-sm border border-white/10 dark:border-gray-600/20"
         aria-label="Toggle menu"
       >
         {isMenuOpen ? <X className="h-6 w-6 transition-transform duration-300" /> : <Menu className="h-6 w-6 transition-transform duration-300" />}
@@ -102,13 +102,13 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
           />
           
           {/* Menu Content - Slides Down from Top Left */}
-          <div className="absolute top-20 left-6 w-80 max-w-[80vw] bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-blue-800/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transform transition-all duration-500 ease-out animate-[slideDownFromTopLeft_0.5s_ease-out_forwards] origin-top-left">
+          <div className="absolute top-20 left-6 w-80 max-w-[80vw] bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-blue-800/95 dark:from-gray-800/95 dark:via-gray-900/95 dark:to-black/95 backdrop-blur-xl border border-white/10 dark:border-gray-600/20 rounded-2xl shadow-2xl transform transition-all duration-500 ease-out animate-[slideDownFromTopLeft_0.5s_ease-out_forwards] origin-top-left">
             {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-white/10">
-              <h3 className="text-white font-semibold text-xl bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent transition-all duration-300">Rochan.dev</h3>
+            <div className="flex justify-between items-center p-6 border-b border-white/10 dark:border-gray-600/20">
+              <h3 className="text-white dark:text-gray-200 font-semibold text-xl bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent transition-all duration-300">Rochan.dev</h3>
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white p-2 hover:bg-white/10 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-90 border border-white/10"
+                className="text-white dark:text-gray-200 p-2 hover:bg-white/10 dark:hover:bg-black/20 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-90 border border-white/10 dark:border-gray-600/20"
                 aria-label="Close menu"
               >
                 <X className="h-6 w-6 transition-transform duration-300" />
@@ -126,7 +126,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
                     className={`text-left p-4 rounded-xl transition-all duration-500 ${
                       isActive
                         ? 'text-yellow-300 bg-gradient-to-r from-yellow-400/10 to-yellow-300/10 border border-yellow-300/20 shadow-lg backdrop-blur-sm scale-[1.02]' 
-                        : 'text-white border border-transparent'
+                        : 'text-white dark:text-gray-200 border border-transparent'
                     }`}
                     style={{ 
                       transitionDelay: `${index * 100}ms`,

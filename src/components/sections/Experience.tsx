@@ -22,12 +22,12 @@ const Experience: React.FC = () => {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-    className="py-16 px-4 sm:px-6 lg:px-8 section-transition bg-gradient-to-br from-purple-100 via-pink-50 to-rose-100"
+    className="py-16 px-4 sm:px-6 lg:px-8 section-transition bg-gradient-to-br from-purple-100 via-pink-50 to-rose-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
-          <Briefcase className="h-6 w-6 text-blue-600 mr-3" aria-hidden="true" />
-          <h2 id="experience-heading" className="text-2xl sm:text-3xl font-bold text-gray-900">
+          <Briefcase className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-3 transition-colors duration-300" aria-hidden="true" />
+          <h2 id="experience-heading" className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
             Experience
           </h2>
         </div>
@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
             <div
               key={exp.id}
               className={
-                `bg-gray-100 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-700 transform hover:-translate-y-1 hover:scale-102 border border-gray-200 flex flex-col ` +
+                `bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md dark:shadow-gray-900/50 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-900/70 transition-all duration-700 transform hover:-translate-y-1 hover:scale-102 border border-gray-200 dark:border-gray-700 flex flex-col ` +
                 `animate-slideinleft opacity-0` // will be overridden by inline style when visible
               }
               style={
@@ -66,22 +66,22 @@ const Experience: React.FC = () => {
                     </div>
                   )}
                   <div className="flex-grow">
-                    <h3 id={`experience-title-${exp.id}`} className="text-xl font-bold text-blue-600 mb-1">
+                    <h3 id={`experience-title-${exp.id}`} className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-1 transition-colors duration-300">
                       {exp.title}
                     </h3>
-                    <div className="text-lg font-semibold text-gray-800">
+                    <div className="text-lg font-semibold text-gray-800 dark:text-gray-200 transition-colors duration-300">
                       {exp.company}
                     </div>
                   </div>
                 </div>
                 
-                <div className="text-gray-600 mb-4 italic">
+                <div className="text-gray-600 dark:text-gray-400 mb-4 italic transition-colors duration-300">
                   {exp.period}
                 </div>
                 <ul className="space-y-2 mb-4 flex-grow" aria-label={`Responsibilities at ${exp.company}`}>
                   {exp.description.map((item, idx) => (
-                    <li key={idx} className="text-gray-700 flex items-start text-sm">
-                      <span className="text-blue-500 mr-2 flex-shrink-0" aria-hidden="true">•</span>
+                    <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-start text-sm transition-colors duration-300">
+                      <span className="text-blue-500 dark:text-blue-400 mr-2 flex-shrink-0 transition-colors duration-300" aria-hidden="true">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -91,7 +91,7 @@ const Experience: React.FC = () => {
                     href={exp.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-md text-sm transition-colors duration-200 mt-auto"
+                    className="inline-flex items-center bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white px-3 py-1.5 rounded-md text-sm transition-colors duration-200 mt-auto"
                     aria-label={`View certificate for ${exp.title} at ${exp.company}`}
                   >
                     <ExternalLink className="h-3 w-3 mr-1" aria-hidden="true" />

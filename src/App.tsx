@@ -4,6 +4,7 @@ import BackToTop from './components/ui/BackToTop';
 import WaveDivider from './components/ui/WaveDivider';
 import LoadingSpinner from './components/ui/LoadingSpinner';
 import Navigation from './components/Navigation';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 // Lazy load section components
 const Home = lazy(() => import('./components/sections/home'));
@@ -69,34 +70,36 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-blue-100">
-      <Header 
-        activeSection={activeSection} 
-        onSectionChange={handleSectionChange} 
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
-      {/* Pass setIsMenuOpen to Navigation if you use Navigation outside Header */}
-      <main className="relative pt-24">
-        <Suspense fallback={<LoadingSpinner />}>
-          <Home />
-          <About />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Achievements />
-          <Contact />
-        </Suspense>
-      </main>
-      
-      <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 text-white py-8 px-4 text-center" role="contentinfo" aria-label="Footer">
-        <p className="text-gray-300">
-          &copy; 2024-2025 Rochan Vardhan Boddepalli. All rights reserved.
-        </p>
-      </footer>
-      
-      <BackToTop />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-blue-100 dark:bg-gray-900 transition-colors duration-300">
+        <Header 
+          activeSection={activeSection} 
+          onSectionChange={handleSectionChange} 
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
+        {/* Pass setIsMenuOpen to Navigation if you use Navigation outside Header */}
+        <main className="relative pt-24">
+          <Suspense fallback={<LoadingSpinner />}>
+            <Home />
+            <About />
+            <Skills />
+            <Experience />
+            <Projects />
+            <Achievements />
+            <Contact />
+          </Suspense>
+        </main>
+        
+        <footer className="bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 dark:from-gray-800 dark:via-gray-900 dark:to-black text-white py-8 px-4 text-center transition-colors duration-300" role="contentinfo" aria-label="Footer">
+          <p className="text-gray-300 dark:text-gray-400">
+            &copy; 2024-2025 Rochan Vardhan Boddepalli. All rights reserved.
+          </p>
+        </footer>
+        
+        <BackToTop />
+      </div>
+    </ThemeProvider>
   );
 }
 

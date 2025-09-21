@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about-section"
-      className={`relative py-8 px-4 sm:px-6 lg:px-8 section-transition${isVisible ? ' visible' : ''} bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100`}
+      className={`relative py-8 px-4 sm:px-6 lg:px-8 section-transition${isVisible ? ' visible' : ''} bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300`}
     >
       {/* Subtle geometric SVG background right side */}
       <svg className="absolute right-0 top-0 h-full w-1/2 opacity-10 -z-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ const About: React.FC = () => {
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">
             About Me
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
@@ -32,8 +32,8 @@ const About: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Left: About Me Text Only */}
           <div className="flex-1">
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl border border-white/20 w-full">
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+            <div className="bg-white/70 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-xl border border-white/20 dark:border-gray-600/30 w-full transition-all duration-300">
+              <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">
                 <p className="text-lg md:text-xl mb-6 leading-relaxed">
                   I’m <span className="font-semibold text-blue-700">Rochan Vardhan Boddepalli</span> — a creative full-stack developer passionate about building clean, interactive, and responsive web apps. I love exploring new tech, solving real-world problems, and collaborating with others to deliver impactful solutions.
                 </p>
@@ -50,37 +50,37 @@ const About: React.FC = () => {
           {/* Right: Two Cards */}
           <div className="flex flex-col gap-6 w-full md:w-80">
             {/* Card 1: Profile Info */}
-            <div className="bg-white/80 rounded-2xl shadow-lg p-6 flex flex-col items-start border border-blue-100">
-              <div className="text-xl font-bold text-gray-900 mb-2">Rochan Vardhan Boddepalli</div>
-              <div className="text-gray-700 flex items-center mb-1">
+            <div className="bg-white/80 dark:bg-gray-800/80 rounded-2xl shadow-lg p-6 flex flex-col items-start border border-blue-100 dark:border-gray-600/30 transition-all duration-300">
+              <div className="text-xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">Rochan Vardhan Boddepalli</div>
+              <div className="text-gray-700 dark:text-gray-300 flex items-center mb-1 transition-colors duration-300">
                 <span className="material-icons text-blue-600 mr-2">📩</span>
                 <a href="mailto:rochanvardhan2004@gmail.com" className="text-black-700 hover:underline">rochanvardhan2004@gmail.com</a>
               </div>
-              <div className="text-gray-700 flex items-center mb-1">
+              <div className="text-gray-700 dark:text-gray-300 flex items-center mb-1 transition-colors duration-300">
                 <span className="material-icons text-blue-600 mr-2">🏫</span>
                 B.Tech – Information Technology
               </div>
-              <div className="text-gray-700 flex items-center">
+              <div className="text-gray-700 dark:text-gray-300 flex items-center transition-colors duration-300">
                 <span className="material-icons text-blue-600 mr-2">📍</span>
                 Rajam, Andhra Pradesh
               </div>
             </div>
             {/* Card 2: Resume Download (Simple) */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-start border">
-              <div className="text-lg font-bold text-gray-900 mb-4">Resume</div>
+            <div className="bg-white dark:bg-gray-800/80 rounded-2xl shadow-lg p-6 flex flex-col items-start border dark:border-gray-600/30 transition-all duration-300">
+              <div className="text-lg font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">Resume</div>
               <div className="flex flex-col gap-2 w-full">
                 <a
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full px-4 py-2 rounded-md border border-blue-500 text-blue-700 font-semibold text-center hover:bg-blue-50 transition-colors"
+                  className="w-full px-4 py-2 rounded-md border border-blue-500 text-blue-700 dark:text-blue-400 dark:border-blue-400 font-semibold text-center hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
                 >
                   🧾View Resume
                 </a>
                 <a
                   href="/resume.pdf"
                   download
-                  className="w-full px-4 py-2 rounded-md border border-purple-500 text-purple-700 font-semibold text-center hover:bg-purple-50 transition-colors"
+                  className="w-full px-4 py-2 rounded-md border border-purple-500 text-purple-700 dark:text-purple-400 dark:border-purple-400 font-semibold text-center hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
                 >
                   📥Download Resume
                 </a>

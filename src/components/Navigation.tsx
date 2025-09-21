@@ -30,79 +30,121 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
   }, [isMenuOpen]);
 
   const handleNavClick = (sectionId: string) => {
+    // Add smooth scroll behavior
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
     onSectionChange(sectionId);
     setIsMenuOpen(false);
   };
 
   return (
-    <>
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex space-x-8">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => handleNavClick(item.id)}
-            className={`text-white hover:text-yellow-300 transition-colors duration-200 font-medium ${
-              activeSection === item.id ? 'text-yellow-300 border-b-2 border-yellow-300' : ''
-            }`}
-          >
-            {item.label}
-          </button>
-        ))}
+    <div className="flex items-center justify-between w-full md:justify-center">
+      {/* Portfolio brand text on mobile */}
+      <div className="md:hidden">
+        <span className="text-white font-semibold text-lg bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent">
+          Portfolio 🏃
+        </span>
+      </div>
+      
+      {/* Desktop Navigation - Center */}
+      <nav className="hidden md:flex items-center space-x-2 bg-white/5 rounded-xl p-1 backdrop-blur-sm transition-all duration-500 ease-out">
+        {navItems.map((item, index) => {
+          const isActive = activeSection === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`relative px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
+                isActive
+                  ? 'bg-gradient-to-r from-yellow-400/20 to-yellow-300/20 text-yellow-300 shadow-lg backdrop-blur-sm border border-yellow-300/30 scale-105' 
+                  : 'text-white'
+              }`}
+              style={{ 
+                transitionDelay: `${index * 50}ms`,
+                transform: isActive ? 'scale(1.05)' : 'scale(1)',
+                transition: 'color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease'
+              }}
+            >
+              {isActive && (
+                <div 
+                  key={`active-${item.id}`}
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-yellow-300/10 rounded-lg blur-sm -z-10"
+                ></div>
+              )}
+              {item.label}
+            </button>
+          );
+        })}
       </nav>
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Button - Right Side */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+        className="md:hidden text-white p-3 hover:bg-white/10 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-180 backdrop-blur-sm border border-white/10"
         aria-label="Toggle menu"
       >
-        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {isMenuOpen ? <X className="h-6 w-6 transition-transform duration-300" /> : <Menu className="h-6 w-6 transition-transform duration-300" />}
       </button>
 
-      {/* Mobile Menu Overlay and Sidebar */}
+      {/* Mobile Menu - Slides from Top Left */}
       {isMenuOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden fixed inset-0 z-[9999]">
           {/* Backdrop Overlay */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-75 z-[9998]"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-500 ease-out"
             onClick={() => setIsMenuOpen(false)}
           />
           
-          {/* Sidebar */}
-          <div className="fixed top-0 left-0 h-full w-80 max-w-[80vw] bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800 shadow-2xl z-[9999] transform transition-transform duration-300 ease-in-out">
+          {/* Menu Content - Slides Down from Top Left */}
+          <div className="absolute top-20 left-6 w-80 max-w-[80vw] bg-gradient-to-br from-gray-900/95 via-blue-900/95 to-blue-800/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transform transition-all duration-500 ease-out animate-[slideDownFromTopLeft_0.5s_ease-out_forwards] origin-top-left">
             {/* Header */}
-            <div className="flex justify-between items-center p-6 border-b border-gray-700 bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800">
-              <h3 className="text-white font-semibold text-xl">Rochan.dev</h3>
+            <div className="flex justify-between items-center p-6 border-b border-white/10">
+              <h3 className="text-white font-semibold text-xl bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent transition-all duration-300">Rochan.dev</h3>
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+                className="text-white p-2 hover:bg-white/10 rounded-xl transition-all duration-500 transform hover:scale-105 hover:rotate-90 border border-white/10"
                 aria-label="Close menu"
               >
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 transition-transform duration-300" />
               </button>
             </div>
             
             {/* Navigation Items */}
-            <nav className="flex flex-col p-4 bg-gradient-to-r from-gray-900 via-blue-900 to-blue-800">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`text-left p-4 rounded-lg transition-all duration-200 mb-2 ${
-                    activeSection === item.id
-                      ? 'text-yellow-300 bg-yellow-300/10 border-l-4 border-yellow-300'
-                      : 'text-white hover:text-yellow-300 hover:bg-white/5'
-                  }`}
-                >
-                  <span className="text-lg font-medium">{item.label}</span>
-                </button>
-              ))}
+            <nav className="flex flex-col p-4 space-y-2">
+              {navItems.map((item, index) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id)}
+                    className={`text-left p-4 rounded-xl transition-all duration-500 ${
+                      isActive
+                        ? 'text-yellow-300 bg-gradient-to-r from-yellow-400/10 to-yellow-300/10 border border-yellow-300/20 shadow-lg backdrop-blur-sm scale-[1.02]' 
+                        : 'text-white border border-transparent'
+                    }`}
+                    style={{ 
+                      transitionDelay: `${index * 100}ms`,
+                      animationDelay: `${(index * 150) + 200}ms`,
+                      animation: `slideInFromTop 0.5s ease-out forwards ${(index * 100) + 200}ms`,
+                      opacity: 0,
+                      transform: 'translateY(-20px)'
+                    }}
+                  >
+                    <span className="text-lg font-medium">{item.label}</span>
+                  </button>
+                );
+              })}
             </nav>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const Achievements: React.FC = () => {
   return (
     <section
       id="achievements"
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-100 to-orange-100"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-amber-100 via-yellow-50 to-orange-100"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-12">

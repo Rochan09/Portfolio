@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about-section"
-      className={`relative py-8 px-4 sm:px-6 lg:px-8 section-transition${isVisible ? ' visible' : ''} bg-gradient-to-br from-pink-100 via-blue-50 to-purple-100`}
+      className={`relative py-8 px-4 sm:px-6 lg:px-8 section-transition${isVisible ? ' visible' : ''} bg-gradient-to-br from-blue-100 via-cyan-50 to-teal-100`}
     >
       {/* Subtle geometric SVG background right side */}
       <svg className="absolute right-0 top-0 h-full w-1/2 opacity-10 -z-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -6,15 +6,23 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 const Experience: React.FC = () => {
   const visibleSections = useScrollAnimation();
   const isVisible = visibleSections.has('experience');
-  
-  // Animation: slide in from left when visible
-  // We'll use intersection observer logic from useScrollAnimation
+
+  const getCompanyLogo = (company: string) => {
+    if (company.includes('Krify')) {
+      return '/krify-logo.jpeg';
+    } else if (company.includes('Salesforce')) {
+      return '/Salesforce-logo.webp';
+    } else if (company.includes('Lomaa')) {
+      return '/lomaa-logo.png';
+    }
+    return null;
+  };
 
   return (
     <section
       id="experience"
       aria-labelledby="experience-heading"
-    className="py-16 px-4 sm:px-6 lg:px-8 section-transition bg-gradient-to-br from-orange-100 via-yellow-50 to-red-100"
+    className="py-16 px-4 sm:px-6 lg:px-8 section-transition bg-gradient-to-br from-purple-100 via-pink-50 to-rose-100"
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
@@ -45,12 +53,28 @@ const Experience: React.FC = () => {
               aria-labelledby={`experience-title-${exp.id}`}
             >
               <div className="p-6 flex-grow flex flex-col">
-                <h3 id={`experience-title-${exp.id}`} className="text-xl font-bold text-blue-600 mb-2">
-                  {exp.title}
-                </h3>
-                <div className="text-lg font-semibold text-gray-800 mb-1">
-                  {exp.company}
+                {/* Company Logo and Title Section */}
+                <div className="flex items-center mb-4">
+                  {getCompanyLogo(exp.company) && (
+                    <div className="flex-shrink-0 mr-4">
+                      <img
+                        src={getCompanyLogo(exp.company)!}
+                        alt={`${exp.company} logo`}
+                        className="h-12 w-12 object-contain rounded-lg"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-grow">
+                    <h3 id={`experience-title-${exp.id}`} className="text-xl font-bold text-blue-600 mb-1">
+                      {exp.title}
+                    </h3>
+                    <div className="text-lg font-semibold text-gray-800">
+                      {exp.company}
+                    </div>
+                  </div>
                 </div>
+                
                 <div className="text-gray-600 mb-4 italic">
                   {exp.period}
                 </div>

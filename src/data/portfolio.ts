@@ -65,6 +65,14 @@ export const projects: Project[] = [
     liveUrl: 'https://rochanportfolio.vercel.app'
   },
   {
+    id: '7',
+    title: 'Fitintel',
+    techStack: ['ML', 'Flask', 'HTML', 'CSS', 'JavaScript'],
+    imageUrl: '/Fitintel Thumbnail.png',
+    githubUrl: 'https://github.com/Rochan09/FitIntel',
+    liveUrl: 'https://fitintel.onrender.com/'
+  },
+  {
     id: '5',
     title: 'Currency Converter',
     techStack: ['HTML', 'CSS', 'JavaScript'],

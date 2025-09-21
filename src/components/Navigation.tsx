@@ -29,6 +29,30 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
     };
   }, [isMenuOpen]);
 
+  // Add click outside handler
+  React.useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (isMenuOpen) {
+        const target = event.target as HTMLElement;
+        const menuButton = document.querySelector('[aria-label="Toggle menu"]');
+        const menuContent = document.querySelector('.mobile-menu-content');
+        
+        // If click is not on menu button or menu content, close menu
+        if (!menuButton?.contains(target) && !menuContent?.contains(target)) {
+          setIsMenuOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen, setIsMenuOpen]);
+
   const handleNavClick = (sectionId: string) => {
     // Use instant scrolling for faster navigation
     const element = document.getElementById(sectionId);
@@ -102,11 +126,22 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange,
           {/* Backdrop Overlay */}
           <div
             className="absolute inset-0 bg-black/50 transition-all duration-200 ease-out"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsMenuOpen(false);
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              setIsMenuOpen(false);
+            }}
           />
           
           {/* Menu Content - Clean White Card positioned right */}
-          <div className="absolute top-24 right-6 w-64 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transition-all duration-250 ease-out animate-[slideDownRight_0.25s_ease-out_forwards] origin-top-right">
+          <div 
+            className="mobile-menu-content absolute top-24 right-6 w-64 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl transition-all duration-250 ease-out animate-[slideDownRight_0.25s_ease-out_forwards] origin-top-right"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+          >
             {/* Close button in top right */}
             <div className="absolute top-3 right-3">
               <button

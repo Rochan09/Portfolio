@@ -70,7 +70,7 @@ export const projects: Project[] = [
     techStack: ['ML', 'Flask', 'HTML', 'CSS', 'JavaScript'],
     imageUrl: '/Fitintel Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/FitIntel',
-    liveUrl: 'https://fitintel.up.railway.app/'
+    liveUrl: 'https://fitintel.onrender.com/'
   },
   {
     id: '5',

@@ -70,7 +70,7 @@ export const projects: Project[] = [
     techStack: ['ML', 'Flask', 'HTML', 'CSS', 'JavaScript'],
     imageUrl: '/Fitintel Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/FitIntel',
-    liveUrl: 'https://fitintel.onrender.com/'
+    liveUrl: 'https://fitintel.up.railway.app/'
   },
   {
     id: '5',
@@ -82,7 +82,7 @@ export const projects: Project[] = [
   },
   {
     id: '6',
-    title: 'MovieBuddy',
+    title: 'MovieBuddy (Use VPN)',
     techStack: ['React', 'TypeScript', 'TMDB API', 'Tailwind CSS', 'Vercel'],
     imageUrl: '/MovieBuddy Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/Movie-Buddy',

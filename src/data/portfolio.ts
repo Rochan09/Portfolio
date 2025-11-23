@@ -43,7 +43,7 @@ export const experiences: Experience[] = [
       'Built and optimized REST APIs, improving response time and application performance.',
       'Engaged in weekly sessions with industry experts to gain practical insights and enhance professional development.'
     ],
-    certificateUrl: '/certificates/Looma.pdf'
+    certificateUrl: '/certificates/Lomaa IT Solutions.pdf'
   }
 ];
 
@@ -73,6 +73,14 @@ export const projects: Project[] = [
     liveUrl: 'https://fitintel.onrender.com/'
   },
   {
+    id: '8',
+    title: 'Resume Builder & Analyzer',
+    techStack: ['MERN', 'JWT', 'PDF Export', 'Voice AI'],
+    imageUrl: '/Resume Thumbnail.png',
+    githubUrl: 'https://github.com/Rochan09/AI-Resume-Analyzer',
+    liveUrl: 'https://ai-resume-analyzer-three-eta.vercel.app/'
+  },
+  {
     id: '5',
     title: 'Currency Converter',
     techStack: ['HTML', 'CSS', 'JavaScript'],
@@ -83,7 +91,7 @@ export const projects: Project[] = [
   {
     id: '6',
     title: 'MovieBuddy (Use VPN)',
-    techStack: ['React', 'TypeScript', 'TMDB API', 'Tailwind CSS', 'Vercel'],
+    techStack: ['React', 'TypeScript', 'TMDB API', 'Tailwind CSS'],
     imageUrl: '/MovieBuddy Thumbnail.png',
     githubUrl: 'https://github.com/Rochan09/Movie-Buddy',
     liveUrl: 'https://movie-buddy-one.vercel.app/'
